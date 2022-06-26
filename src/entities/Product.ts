@@ -10,6 +10,8 @@ export class Product {
 
     if (!id) {
       this.id = uuid();
+    } else {
+      this.id = id;
     }
   }
 }
