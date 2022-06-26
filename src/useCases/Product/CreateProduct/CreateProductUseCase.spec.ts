@@ -1,9 +1,9 @@
-import { InMemoryCreateProductRepository } from "../../../tests/repositories/InMemoryProductRepository";
+import { InMemoryProductRepository } from "../../../tests/repositories/InMemoryProductRepository";
 import { CreateProductUseCase } from "./CreateProductUseCase";
 
 describe("Create Product", () => {
   it("Save product", () => {
-    const createProductRepository = new InMemoryCreateProductRepository();
+    const createProductRepository = new InMemoryProductRepository();
     const createProductUseCase = new CreateProductUseCase(
       createProductRepository
     );

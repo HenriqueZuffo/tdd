@@ -1,10 +1,10 @@
 import { Product } from "../../../entities/Product";
-import { InMemoryCreateProductRepository } from "../../../tests/repositories/InMemoryProductRepository";
+import { InMemoryProductRepository } from "../../../tests/repositories/InMemoryProductRepository";
 import { GetAllProductsUseCase } from "./GetAllProductsUseCase";
 
 describe("Get all products use case", () => {
   it("Get all products", async () => {
-    const productRepository = new InMemoryCreateProductRepository();
+    const productRepository = new InMemoryProductRepository();
     const getAllProductsUseCase = new GetAllProductsUseCase(productRepository);
 
     const expected: Product[] = [

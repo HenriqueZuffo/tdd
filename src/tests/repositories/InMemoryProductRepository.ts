@@ -1,7 +1,7 @@
 import { Product } from "../../entities/Product";
 import { IProductRepository } from "../../repositories/IProductRepository";
 
-export class InMemoryCreateProductRepository implements IProductRepository {
+export class InMemoryProductRepository implements IProductRepository {
   public products: Product[] = [];
 
   async findById(id: string): Promise<Product | null> {
@@ -21,7 +21,7 @@ export class InMemoryCreateProductRepository implements IProductRepository {
       }
     });
 
-    if (!productsFiltered) {
+    if (productsFiltered.length === 0) {
       return null;
     }
 
